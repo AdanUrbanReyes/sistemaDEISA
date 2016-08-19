@@ -1,0 +1,5 @@
+Entrada de datos
+Registro no encontrado
+Base de datos
+Accion exitosa
+src.GetType().GetProperty(propName).GetValue(src, null);
