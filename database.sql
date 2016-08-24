@@ -60,7 +60,8 @@ ALTER TABLE menu ADD FOREIGN KEY(es_submenu_de) REFERENCES menu(nombre) ON UPDAT
 -- es_submenu_de : si este menu es submenu de otro deberia tener el nombre del menu padre, y este debe existir en esta tabla; en caso de no ser submenu de nadie el valor deveria ser 'NINGUNO'
 -- descripcion : una descripcion de lo que se puede hacer con este menu
 -- OBSERVACIONES : esta tabla esta pensada para el lenguaje de programacion C#; por lo cual toda la programacion es la que le da 
--- sentido a esta tabla; para agregar un menu nuevo quisas debas anular el
+-- sentido a esta tabla; el nombre del menu se uso para el nombre de la variable en C# tener cuidado porque puede existir
+-- una variable dentro del codigo con el mismo nombre :S y ara tronar el codigo; para agregar un menu nuevo quisas debas anular el
 -- FOREIGN KEY si es que debes agregar un nuevo menu que es la raiz es decir no tiene submenus.
 -- si se borra el menu eliminara todos los registros en las tablas:
 -- menu si este menu tiene submensu es decir es raiz de algun sumenu (de forma recursiva)
@@ -69,7 +70,7 @@ ALTER TABLE menu ADD FOREIGN KEY(es_submenu_de) REFERENCES menu(nombre) ON UPDAT
 -- entonces es muy peligrrozo eliminar un menu padre de otro submenu :S
 
 CREATE TABLE modulo(
-	clase VARCHAR(30) NOT NULL,
+	clase VARCHAR(50) NOT NULL,
     espacio_nombres VARCHAR(100) NOT NULL,
     menu VARCHAR(50) NOT NULL,
     PRIMARY KEY(clase,espacio_nombres),
@@ -92,6 +93,26 @@ CREATE TABLE usuario_accesa_menu(
 -- menu : nombre del menu (debe existir en la tabla menu)
 -- OBSERVACIONES : La tabla esta pensada para guradar los menus a los que tendra acceso un usuario; desgraciadamente si no se le puede
 -- dar acceso a subpartes del menu, es decir si le das acceso a un menu algun usuario se lo das completo
+
+CREATE TABLE codigo_postal(
+	codigo INT NOT NULL,
+	colonia VARCHAR(30) NOT NULL,
+    estado VARCHAR(30) NOT NULL,
+    municipio VARCHAR(30) NOT NULL,
+    PRIMARY KEY(codigo,colonia)
+);
+
+CREATE TABLE direccion(
+	id INT AUTO_INCREMENT NOT NULL,
+	codigo_postal INT NOT NULL,
+    colonia VARCHAR(30) NOT NULL,
+    calle VARCHAR(30) NOT NULL,
+    numero_exterior INT NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY(codigo_postal,colonia) REFERENCES codigo_postal(codigo,colonia) ON UPDATE CASCADE ON DELETE CASCADE 
+);
+
+
 
 
 
@@ -166,9 +187,12 @@ VALUES ('Ayan','A1y3a1n7?','Adan','Urban','Reyes', 'A','2016-08-19','SS','C:\Use
 
 SET foreign_key_checks = 0;
 	INSERT INTO menu VALUES ('usuarios_toolStripMenuItem','Usuarios','usuarios','NINGUNO','Alta, Baja, Modificacion de usuarios'),
-    ('usuarioAccesaMenu_toolStripMenuItem','Accesos','usuarioAccesaMenu','NINGUNO','Modificacion de los menus a los que tiene acceso un usuario');
+    ('usuarioAccesaMenu_toolStripMenuItem','Accesos','usuarioAccesaMenu','NINGUNO','Modificacion de los menus a los que tiene acceso un usuario'),
+    ('direcciones_toolStripMenuItem','Direcciones','direcciones','NINGUNO','Alta, Baja, Modificacion de direcciones');
 SET foreign_key_checks = 1;
 INSERT INTO modulo VALUES ('AdministracionUsuarios_modulo','SistemaDEISA.modelo.modulos','usuarios_toolStripMenuItem'),
-	('UsuarioAccesaMenu_modulo','SistemaDEISA.modelo.modulos','usuarioAccesaMenu_toolStripMenuItem');
+	('UsuarioAccesaMenu_modulo','SistemaDEISA.modelo.modulos','usuarioAccesaMenu_toolStripMenuItem'),
+    ('AdministracionDirecciones_modulo','SistemaDEISA.modelo.modulos','direcciones_toolStripMenuItem');
 INSERT INTO usuario_accesa_menu VALUES ('Ayan','usuarios_toolStripMenuItem'),
-	('Ayan','usuarioAccesaMenu_toolStripMenuItem');
+	('Ayan','usuarioAccesaMenu_toolStripMenuItem'),
+    ('Ayan','direcciones_toolStripMenuItem');

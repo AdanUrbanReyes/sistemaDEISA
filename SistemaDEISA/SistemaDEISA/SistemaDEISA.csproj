@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="modelo\AdministracionDirecciones_modelo.cs" />
     <Compile Include="modelo\AdministracionUsuarios_modelo.cs" />
     <Compile Include="modelo\basedatos\Departamento.cs" />
     <Compile Include="modelo\basedatos\Modulo.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="modelo\InicioSesion_modelo.cs" />
     <Compile Include="modelo\basedatos\Menu.cs" />
     <Compile Include="modelo\modulos\AdministracionClientes_modulo.cs" />
+    <Compile Include="modelo\modulos\AdministracionDirecciones_modulo.cs" />
     <Compile Include="modelo\modulos\AdministracionUsuarios_modulo.cs" />
     <Compile Include="modelo\modulos\Manejador.cs" />
     <Compile Include="modelo\ConexionBasedatos.cs" />
@@ -70,6 +72,12 @@
     </Compile>
     <Compile Include="vista\AdministracionClientes_vista.Designer.cs">
       <DependentUpon>AdministracionClientes_vista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\AdministracionDirecciones_vista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\AdministracionDirecciones_vista.Designer.cs">
+      <DependentUpon>AdministracionDirecciones_vista.cs</DependentUpon>
     </Compile>
     <Compile Include="vista\AdministracionUsuarios_vista.cs">
       <SubType>Form</SubType>
@@ -107,6 +115,9 @@
     </Compile>
     <EmbeddedResource Include="vista\AdministracionClientes_vista.resx">
       <DependentUpon>AdministracionClientes_vista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\AdministracionDirecciones_vista.resx">
+      <DependentUpon>AdministracionDirecciones_vista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\AdministracionUsuarios_vista.resx">
       <DependentUpon>AdministracionUsuarios_vista.cs</DependentUpon>
@@ -192,6 +203,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\usuarioAccesaMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregarFlecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quitarFlecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\direcciones.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

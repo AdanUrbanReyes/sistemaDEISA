@@ -37,6 +37,16 @@
             this.puesto_label = new System.Windows.Forms.Label();
             this.buscar_button = new System.Windows.Forms.Button();
             this.ejecutar_button = new System.Windows.Forms.Button();
+            this.menusSinAcceso_listView = new System.Windows.Forms.ListView();
+            this.moduloSinAcceso_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.descripcionSinAcceso_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nombreSinAcceso_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.agregar_button = new System.Windows.Forms.Button();
+            this.quitar_button = new System.Windows.Forms.Button();
+            this.menusAcceso_listView = new System.Windows.Forms.ListView();
+            this.moduloAcceso_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.descripcionAcceso_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nombreAcceso_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // cuenta_comboBox
@@ -116,11 +126,96 @@
             this.ejecutar_button.BackgroundImage = global::SistemaDEISA.Properties.Resources.hacer;
             this.ejecutar_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ejecutar_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ejecutar_button.Location = new System.Drawing.Point(407, 371);
+            this.ejecutar_button.Location = new System.Drawing.Point(407, 380);
             this.ejecutar_button.Name = "ejecutar_button";
             this.ejecutar_button.Size = new System.Drawing.Size(48, 48);
             this.ejecutar_button.TabIndex = 7;
             this.ejecutar_button.UseVisualStyleBackColor = true;
+            this.ejecutar_button.Click += new System.EventHandler(this.ejecutar_button_Click);
+            // 
+            // menusSinAcceso_listView
+            // 
+            this.menusSinAcceso_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.moduloSinAcceso_columnHeader,
+            this.descripcionSinAcceso_columnHeader,
+            this.nombreSinAcceso_columnHeader});
+            this.menusSinAcceso_listView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.menusSinAcceso_listView.FullRowSelect = true;
+            this.menusSinAcceso_listView.GridLines = true;
+            this.menusSinAcceso_listView.Location = new System.Drawing.Point(1, 134);
+            this.menusSinAcceso_listView.Name = "menusSinAcceso_listView";
+            this.menusSinAcceso_listView.Size = new System.Drawing.Size(211, 240);
+            this.menusSinAcceso_listView.TabIndex = 9;
+            this.menusSinAcceso_listView.UseCompatibleStateImageBehavior = false;
+            this.menusSinAcceso_listView.View = System.Windows.Forms.View.Details;
+            // 
+            // moduloSinAcceso_columnHeader
+            // 
+            this.moduloSinAcceso_columnHeader.Text = "Modulo";
+            this.moduloSinAcceso_columnHeader.Width = 61;
+            // 
+            // descripcionSinAcceso_columnHeader
+            // 
+            this.descripcionSinAcceso_columnHeader.Text = "Descripcion";
+            this.descripcionSinAcceso_columnHeader.Width = 200;
+            // 
+            // nombreSinAcceso_columnHeader
+            // 
+            this.nombreSinAcceso_columnHeader.Text = "Nombre";
+            this.nombreSinAcceso_columnHeader.Width = 70;
+            // 
+            // agregar_button
+            // 
+            this.agregar_button.BackgroundImage = global::SistemaDEISA.Properties.Resources.agregarFlecha;
+            this.agregar_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.agregar_button.Location = new System.Drawing.Point(218, 187);
+            this.agregar_button.Name = "agregar_button";
+            this.agregar_button.Size = new System.Drawing.Size(48, 48);
+            this.agregar_button.TabIndex = 10;
+            this.agregar_button.UseVisualStyleBackColor = true;
+            this.agregar_button.Click += new System.EventHandler(this.agregar_button_Click);
+            // 
+            // quitar_button
+            // 
+            this.quitar_button.BackgroundImage = global::SistemaDEISA.Properties.Resources.quitarFlecha;
+            this.quitar_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.quitar_button.Location = new System.Drawing.Point(218, 253);
+            this.quitar_button.Name = "quitar_button";
+            this.quitar_button.Size = new System.Drawing.Size(48, 48);
+            this.quitar_button.TabIndex = 11;
+            this.quitar_button.UseVisualStyleBackColor = true;
+            this.quitar_button.Click += new System.EventHandler(this.quitar_button_Click);
+            // 
+            // menusAcceso_listView
+            // 
+            this.menusAcceso_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.moduloAcceso_columnHeader,
+            this.descripcionAcceso_columnHeader,
+            this.nombreAcceso_columnHeader});
+            this.menusAcceso_listView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.menusAcceso_listView.FullRowSelect = true;
+            this.menusAcceso_listView.GridLines = true;
+            this.menusAcceso_listView.Location = new System.Drawing.Point(272, 134);
+            this.menusAcceso_listView.Name = "menusAcceso_listView";
+            this.menusAcceso_listView.Size = new System.Drawing.Size(211, 240);
+            this.menusAcceso_listView.TabIndex = 12;
+            this.menusAcceso_listView.UseCompatibleStateImageBehavior = false;
+            this.menusAcceso_listView.View = System.Windows.Forms.View.Details;
+            // 
+            // moduloAcceso_columnHeader
+            // 
+            this.moduloAcceso_columnHeader.Text = "Modulo";
+            this.moduloAcceso_columnHeader.Width = 61;
+            // 
+            // descripcionAcceso_columnHeader
+            // 
+            this.descripcionAcceso_columnHeader.Text = "Descripcion";
+            this.descripcionAcceso_columnHeader.Width = 200;
+            // 
+            // nombreAcceso_columnHeader
+            // 
+            this.nombreAcceso_columnHeader.Text = "Nombre";
+            this.nombreAcceso_columnHeader.Width = 70;
             // 
             // UsuarioAccesaMenu_vista
             // 
@@ -128,6 +223,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(484, 431);
+            this.Controls.Add(this.menusAcceso_listView);
+            this.Controls.Add(this.quitar_button);
+            this.Controls.Add(this.agregar_button);
+            this.Controls.Add(this.menusSinAcceso_listView);
             this.Controls.Add(this.ejecutar_button);
             this.Controls.Add(this.buscar_button);
             this.Controls.Add(this.puesto_label);
@@ -139,7 +238,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "UsuarioAccesaMenu_vista";
             this.Text = "Control de accesos";
@@ -160,5 +259,15 @@
         private System.Windows.Forms.Label puesto_label;
         private System.Windows.Forms.Button buscar_button;
         private System.Windows.Forms.Button ejecutar_button;
+        private System.Windows.Forms.ListView menusSinAcceso_listView;
+        private System.Windows.Forms.ColumnHeader descripcionSinAcceso_columnHeader;
+        private System.Windows.Forms.ColumnHeader moduloSinAcceso_columnHeader;
+        private System.Windows.Forms.Button agregar_button;
+        private System.Windows.Forms.Button quitar_button;
+        private System.Windows.Forms.ListView menusAcceso_listView;
+        private System.Windows.Forms.ColumnHeader moduloAcceso_columnHeader;
+        private System.Windows.Forms.ColumnHeader descripcionAcceso_columnHeader;
+        private System.Windows.Forms.ColumnHeader nombreSinAcceso_columnHeader;
+        private System.Windows.Forms.ColumnHeader nombreAcceso_columnHeader;
     }
 }

@@ -83,6 +83,16 @@ namespace SistemaDEISA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agregarFlecha {
+            get {
+                object obj = ResourceManager.GetObject("agregarFlecha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap buscar {
             get {
                 object obj = ResourceManager.GetObject("buscar", resourceCulture);
@@ -127,6 +137,16 @@ namespace SistemaDEISA.Properties {
             get {
                 object obj = ResourceManager.GetObject("DEISA", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap direcciones {
+            get {
+                object obj = ResourceManager.GetObject("direcciones", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -216,6 +236,16 @@ namespace SistemaDEISA.Properties {
         internal static System.Drawing.Bitmap notificacionAgregar {
             get {
                 object obj = ResourceManager.GetObject("notificacionAgregar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap quitarFlecha {
+            get {
+                object obj = ResourceManager.GetObject("quitarFlecha", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

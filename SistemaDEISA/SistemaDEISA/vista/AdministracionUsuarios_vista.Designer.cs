@@ -75,7 +75,7 @@
             this.cuenta_comboBox.MaxLength = 45;
             this.cuenta_comboBox.Name = "cuenta_comboBox";
             this.cuenta_comboBox.Size = new System.Drawing.Size(314, 25);
-            this.cuenta_comboBox.TabIndex = 1;
+            this.cuenta_comboBox.TabIndex = 0;
             // 
             // clave_textBox
             // 
@@ -84,7 +84,7 @@
             this.clave_textBox.Name = "clave_textBox";
             this.clave_textBox.PasswordChar = '*';
             this.clave_textBox.Size = new System.Drawing.Size(185, 23);
-            this.clave_textBox.TabIndex = 2;
+            this.clave_textBox.TabIndex = 1;
             // 
             // nombres_textBox
             // 
@@ -92,7 +92,7 @@
             this.nombres_textBox.MaxLength = 30;
             this.nombres_textBox.Name = "nombres_textBox";
             this.nombres_textBox.Size = new System.Drawing.Size(185, 23);
-            this.nombres_textBox.TabIndex = 3;
+            this.nombres_textBox.TabIndex = 2;
             // 
             // agregar_button
             // 
@@ -103,7 +103,7 @@
             this.agregar_button.Location = new System.Drawing.Point(316, 369);
             this.agregar_button.Name = "agregar_button";
             this.agregar_button.Size = new System.Drawing.Size(48, 48);
-            this.agregar_button.TabIndex = 4;
+            this.agregar_button.TabIndex = 10;
             this.agregar_button.UseVisualStyleBackColor = false;
             this.agregar_button.Click += new System.EventHandler(this.agregar_button_Click);
             // 
@@ -116,7 +116,7 @@
             this.modificar_button.Location = new System.Drawing.Point(370, 369);
             this.modificar_button.Name = "modificar_button";
             this.modificar_button.Size = new System.Drawing.Size(48, 48);
-            this.modificar_button.TabIndex = 5;
+            this.modificar_button.TabIndex = 11;
             this.modificar_button.UseVisualStyleBackColor = false;
             this.modificar_button.Click += new System.EventHandler(this.modificar_button_Click);
             // 
@@ -129,7 +129,7 @@
             this.eliminar_button.Location = new System.Drawing.Point(424, 369);
             this.eliminar_button.Name = "eliminar_button";
             this.eliminar_button.Size = new System.Drawing.Size(48, 48);
-            this.eliminar_button.TabIndex = 6;
+            this.eliminar_button.TabIndex = 12;
             this.eliminar_button.UseVisualStyleBackColor = false;
             this.eliminar_button.Click += new System.EventHandler(this.eliminar_button_Click);
             // 
@@ -156,9 +156,9 @@
             this.segundoApellido_label.AutoSize = true;
             this.segundoApellido_label.Location = new System.Drawing.Point(252, 127);
             this.segundoApellido_label.Name = "segundoApellido_label";
-            this.segundoApellido_label.Size = new System.Drawing.Size(122, 17);
+            this.segundoApellido_label.Size = new System.Drawing.Size(126, 17);
             this.segundoApellido_label.TabIndex = 9;
-            this.segundoApellido_label.Text = "Segundo apellido";
+            this.segundoApellido_label.Text = "Segundo apellido:";
             // 
             // primerApellido_textBox
             // 
@@ -166,7 +166,7 @@
             this.primerApellido_textBox.MaxLength = 30;
             this.primerApellido_textBox.Name = "primerApellido_textBox";
             this.primerApellido_textBox.Size = new System.Drawing.Size(185, 23);
-            this.primerApellido_textBox.TabIndex = 10;
+            this.primerApellido_textBox.TabIndex = 3;
             // 
             // segundoApellido_textBox
             // 
@@ -174,7 +174,7 @@
             this.segundoApellido_textBox.MaxLength = 30;
             this.segundoApellido_textBox.Name = "segundoApellido_textBox";
             this.segundoApellido_textBox.Size = new System.Drawing.Size(185, 23);
-            this.segundoApellido_textBox.TabIndex = 11;
+            this.segundoApellido_textBox.TabIndex = 4;
             // 
             // estatus_comboBox
             // 
@@ -186,7 +186,7 @@
             this.estatus_comboBox.MaxLength = 1;
             this.estatus_comboBox.Name = "estatus_comboBox";
             this.estatus_comboBox.Size = new System.Drawing.Size(60, 25);
-            this.estatus_comboBox.TabIndex = 12;
+            this.estatus_comboBox.TabIndex = 5;
             // 
             // estatus_label
             // 
@@ -214,7 +214,7 @@
             this.fechaInicio_dateTimePicker.Location = new System.Drawing.Point(255, 207);
             this.fechaInicio_dateTimePicker.Name = "fechaInicio_dateTimePicker";
             this.fechaInicio_dateTimePicker.Size = new System.Drawing.Size(185, 23);
-            this.fechaInicio_dateTimePicker.TabIndex = 15;
+            this.fechaInicio_dateTimePicker.TabIndex = 6;
             // 
             // departamento_label
             // 
@@ -234,7 +234,7 @@
             this.departamento_comboBox.MaxLength = 30;
             this.departamento_comboBox.Name = "departamento_comboBox";
             this.departamento_comboBox.Size = new System.Drawing.Size(185, 25);
-            this.departamento_comboBox.TabIndex = 17;
+            this.departamento_comboBox.TabIndex = 7;
             // 
             // puesto_label
             // 
@@ -255,7 +255,7 @@
             this.puesto_comboBox.MaxLength = 30;
             this.puesto_comboBox.Name = "puesto_comboBox";
             this.puesto_comboBox.Size = new System.Drawing.Size(185, 25);
-            this.puesto_comboBox.TabIndex = 19;
+            this.puesto_comboBox.TabIndex = 8;
             // 
             // buscar_button
             // 
@@ -266,7 +266,7 @@
             this.buscar_button.Location = new System.Drawing.Point(34, 5);
             this.buscar_button.Name = "buscar_button";
             this.buscar_button.Size = new System.Drawing.Size(48, 48);
-            this.buscar_button.TabIndex = 20;
+            this.buscar_button.TabIndex = 13;
             this.buscar_button.Tag = "";
             this.buscar_button.UseVisualStyleBackColor = false;
             this.buscar_button.Click += new System.EventHandler(this.buscar_button_Click);
@@ -289,7 +289,7 @@
             this.cargarFoto_button.Location = new System.Drawing.Point(38, 335);
             this.cargarFoto_button.Name = "cargarFoto_button";
             this.cargarFoto_button.Size = new System.Drawing.Size(55, 48);
-            this.cargarFoto_button.TabIndex = 22;
+            this.cargarFoto_button.TabIndex = 9;
             this.cargarFoto_button.UseVisualStyleBackColor = false;
             this.cargarFoto_button.Click += new System.EventHandler(this.cargarFoto_button_Click);
             // 
