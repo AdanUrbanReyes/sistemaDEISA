@@ -93,28 +93,59 @@ CREATE TABLE usuario_accesa_menu(
 -- menu : nombre del menu (debe existir en la tabla menu)
 -- OBSERVACIONES : La tabla esta pensada para guradar los menus a los que tendra acceso un usuario; desgraciadamente si no se le puede
 -- dar acceso a subpartes del menu, es decir si le das acceso a un menu algun usuario se lo das completo
-
 CREATE TABLE codigo_postal(
-	codigo INT NOT NULL,
-	colonia VARCHAR(30) NOT NULL,
-    estado VARCHAR(30) NOT NULL,
-    municipio VARCHAR(30) NOT NULL,
-    PRIMARY KEY(codigo,colonia)
-);
-
-CREATE TABLE direccion(
-	id INT AUTO_INCREMENT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	codigo_postal INT NOT NULL,
-    colonia VARCHAR(30) NOT NULL,
-    calle VARCHAR(30) NOT NULL,
-    numero_exterior INT NOT NULL,
-	PRIMARY KEY(id),
-	FOREIGN KEY(codigo_postal,colonia) REFERENCES codigo_postal(codigo,colonia) ON UPDATE CASCADE ON DELETE CASCADE 
+    estado VARCHAR(100) NOT NULL,
+    municipio VARCHAR(100) NOT NULL,
+    asentamiento VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
 );
-
-
-
-
+CREATE TABLE direccion(
+	id INT NOT NULL AUTO_INCREMENT,
+	calle VARCHAR(100) NOT NULL,
+    numero_exterior INT NOT NULL,
+    numero_interior INT NULL,
+	codigo_postal INT NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY(codigo_postal) REFERENCES codigo_postal(id)
+);
+CREATE TABLE cliente(
+	razon_social VARCHAR(300) NOT NULL,
+	planta VARCHAR(300) NOT NULL,
+	empresa VARCHAR(300) NULL,
+    giro VARCHAR(100) NOT NULL,
+    direccion INT NOT NULL,
+    rfc VARCHAR(13) NULL,
+    proveedor INT NULL,
+    sae INT NULL,
+    PRIMARY KEY(razon_social, planta),
+    FOREIGN KEY (direccion) REFERENCES direccion(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE celular_cliente(
+	razon_social VARCHAR(300) NOT NULL,
+    planta VARCHAR(300) NOT NULL,
+    celular VARCHAR(10) NOT NULL,
+    tipo VARCHAR(30) NOT NULL,
+    PRIMARY KEY(razon_social, planta, celular)
+    -- FOREIGN KEY (razon_social, planta) REFERENCES cliente(razon_social, planta) ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE correo_electronico_cliente(
+	razon_social VARCHAR(300) NOT NULL,
+    planta VARCHAR(300) NOT NULL,
+    correo_electronico VARCHAR(100) NOT NULL,
+    tipo VARCHAR(30) NOT NULL,
+    PRIMARY KEY(razon_social, planta, correo_electronico)
+    -- FOREIGN KEY (razon_social, planta) REFERENCES cliente(razon_social, planta) ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE telefono_cliente(
+	razon_social VARCHAR(300) NOT NULL,
+    planta VARCHAR(300) NOT NULL,
+    telefono VARCHAR(8) NOT NULL,
+    tipo VARCHAR(30) NOT NULL,
+    PRIMARY KEY(razon_social, planta, telefono)
+    -- FOREIGN KEY (razon_social, planta) REFERENCES cliente(razon_social, planta) ON UPDATE CASCADE ON DELETE CASCADE
+);
 
 CREATE TABLE matriz(
 	abreviatura varchar(10) not null,
@@ -161,22 +192,6 @@ CREATE TABLE parametro_aplica_metodologia(
 );
 
 
-
-
-
-DELIMITER $
-CREATE PROCEDURE llave_primaria_de_una_tabla(in nombre_basedatos varchar(64),in nombre_tabla varchar(64))
-begin 
-	SELECT  COLUMN_NAME 
-	FROM information_schema.COLUMNS 
-	WHERE TABLE_NAME = nombre_tabla AND -- name of table
-   	table_schema = nombre_basedatos AND -- name of schema
-	   column_key = "PRI";-- for get attributes PRIMARY KEY
-END $
-DELIMITER ;
--- CALL llave_primaria_de_una_tabla("DEISA","usuario");
-
-
 -- Inserciones para poder iniciar el sistema deisa
 -- primero se tendra que agregar el departamento y jefe pero anulando los FOREIGN KEYs porque si no no los dejara
 SET foreign_key_checks = 0;
@@ -186,13 +201,17 @@ INSERT INTO usuario (cuenta,clave,nombres,primer_apellido,segundo_apellido,estat
 VALUES ('Ayan','A1y3a1n7?','Adan','Urban','Reyes', 'A','2016-08-19','SS','C:\Users\Ayan\Pictures\edc2.jpg','Jefe');
 
 SET foreign_key_checks = 0;
-	INSERT INTO menu VALUES ('usuarios_toolStripMenuItem','Usuarios','usuarios','NINGUNO','Alta, Baja, Modificacion de usuarios'),
+INSERT INTO menu VALUES ('usuarios_toolStripMenuItem','Usuarios','usuarios','NINGUNO','Alta, Baja, Modificacion de usuarios'),
     ('usuarioAccesaMenu_toolStripMenuItem','Accesos','usuarioAccesaMenu','NINGUNO','Modificacion de los menus a los que tiene acceso un usuario'),
-    ('direcciones_toolStripMenuItem','Direcciones','direcciones','NINGUNO','Alta, Baja, Modificacion de direcciones');
+    ('direcciones_toolStripMenuItem','Direcciones','direcciones','NINGUNO','Alta, Baja, Modificacion de direcciones'),
+    ('clientes_toolStripMenuItem','Clientes','clientes','NINGUNO','Alta, Baja, Modificacion de clientes'),
+    ('cotizaciones_toolStripMenuItem','Cotizaciones','cotizaciones','NINGUNO','Alta, Baja, Modificacion Cotizaciones');
+    
 SET foreign_key_checks = 1;
 INSERT INTO modulo VALUES ('AdministracionUsuarios_modulo','SistemaDEISA.modelo.modulos','usuarios_toolStripMenuItem'),
 	('UsuarioAccesaMenu_modulo','SistemaDEISA.modelo.modulos','usuarioAccesaMenu_toolStripMenuItem'),
-    ('AdministracionDirecciones_modulo','SistemaDEISA.modelo.modulos','direcciones_toolStripMenuItem');
-INSERT INTO usuario_accesa_menu VALUES ('Ayan','usuarios_toolStripMenuItem'),
-	('Ayan','usuarioAccesaMenu_toolStripMenuItem'),
-    ('Ayan','direcciones_toolStripMenuItem');
+    ('AdministracionDirecciones_modulo','SistemaDEISA.modelo.modulos','direcciones_toolStripMenuItem'),
+    ('AdministracionClientes_modulo','SistemaDEISA.modelo.modulos','clientes_toolStripMenuItem'),
+    ('Cotizaciones_modulo','SistemaDEISA.modelo.modulos','cotizaciones_toolStripMenuItem');
+    
+INSERT INTO usuario_accesa_menu VALUES ('Ayan','usuarioAccesaMenu_toolStripMenuItem');

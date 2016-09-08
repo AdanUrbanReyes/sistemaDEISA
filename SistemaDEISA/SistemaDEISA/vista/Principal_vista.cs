@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using SistemaDEISA.utilerias;
 using SistemaDEISA.modelo;
 using SistemaDEISA.modelo.basedatos;
 using SistemaDEISA.modelo.modulos;
@@ -35,30 +36,18 @@ namespace SistemaDEISA.vista
             instancia = null;
             //Application.Restart();
         }
-        #endregion singlenton
-
-        public static void agregaFormulario(Form formulario){
-            if (instancia == null || formulario == null) {
+        public static void agregaFormulario(Form formulario)
+        {
+            if (instancia == null || formulario == null)
+            {
                 return;
             }
             formulario.MdiParent = instancia;
             formulario.Show();
             formulario.Activate();
         }
+        #endregion singlenton
 
-        public static ToolStripMenuItem obtenerItem(Image imagen,string nombre,string texto) {
-            ToolStripMenuItem item = new ToolStripMenuItem();
-            item.BackColor = Color.Transparent;
-            item.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            item.Font = new Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            item.Image = imagen;
-            item.ImageAlign = ContentAlignment.TopCenter;
-            item.ImageScaling = ToolStripItemImageScaling.None;
-            item.Name = nombre;
-            item.Text = texto;
-            item.TextImageRelation = TextImageRelation.ImageAboveText;
-            return item;
-        }
 
         /// <summary>
         /// Carga recursivamente los submenus para cada raiz del menu;
@@ -79,7 +68,7 @@ namespace SistemaDEISA.vista
             ToolStripMenuItem itemSubmenu = null;
             for (i = 0; i < submenus.Count;i++ )
             {
-                itemSubmenu = Principal_vista.obtenerItem((Image)global::SistemaDEISA.Properties.Resources.ResourceManager.GetObject(submenus[i].imagen), submenus[i].nombre, submenus[i].texto);
+                itemSubmenu = ItemMenu.obtenerItem((Image)global::SistemaDEISA.Properties.Resources.ResourceManager.GetObject(submenus[i].imagen), submenus[i].nombre, submenus[i].texto);
                 cargarSubmenu(itemSubmenu,submenus[i]);
                 raiz.DropDownItems.Add(itemSubmenu);
             }
@@ -105,7 +94,7 @@ namespace SistemaDEISA.vista
             int i;
             for (i = 0; i < menusAcceso.Count; i++) {
                 menu = modelo.obtenerMenu(menusAcceso[i].menu);
-                itemMenu = Principal_vista.obtenerItem((Image)global::SistemaDEISA.Properties.Resources.ResourceManager.GetObject(menu.imagen), menu.nombre, menu.texto);
+                itemMenu = ItemMenu.obtenerItem((Image)global::SistemaDEISA.Properties.Resources.ResourceManager.GetObject(menu.imagen), menu.nombre, menu.texto);
                 cargarSubmenu(itemMenu,menu);
                 menu_menuStrip.Items.Add(itemMenu);
             }

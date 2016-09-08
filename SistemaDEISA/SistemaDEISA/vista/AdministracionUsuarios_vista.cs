@@ -2,8 +2,10 @@
 using System.Windows.Forms;
 using System.Drawing;
 using System.Collections.Generic;
+using SistemaDEISA.utilerias;
 using SistemaDEISA.modelo;
 using SistemaDEISA.modelo.basedatos;
+
 namespace SistemaDEISA.vista
 {
     public partial class AdministracionUsuarios_vista : Form
@@ -176,29 +178,6 @@ namespace SistemaDEISA.vista
             usuario.foto = selector.FileName;
             return usuario;
         }
-        
-        public static string uneItems(List<string> list, string separador){
-            if (list == null) {
-                return null;
-            }
-            string union = string.Empty;
-            int i;
-            for (i = 0; i < list.Count; i++ )
-            {
-                union += list[i] + separador;
-            }
-            return union;
-        }
-
-        private void agregaUsuarioAutocompletado(Usuario usuario) {
-            cuenta_comboBox.AutoCompleteCustomSource.Add(usuario.cuenta);
-            if (!estatus_comboBox.AutoCompleteCustomSource.Contains(""+usuario.estatus)) {
-                estatus_comboBox.AutoCompleteCustomSource.Add("" + usuario.estatus);
-            }
-            if (!puesto_comboBox.AutoCompleteCustomSource.Contains(usuario.puesto)) {
-                puesto_comboBox.AutoCompleteCustomSource.Contains(usuario.puesto);
-            }
-        }
 
         private void agregar_button_Click(object sender, EventArgs e)
         {
@@ -217,7 +196,7 @@ namespace SistemaDEISA.vista
             }
             else
             {
-                MessageBox.Show("Para guardar el registro es necesario ingresar todos los campos\nPor favor ingrese los siguientes campos:\n" + AdministracionUsuarios_vista.uneItems(atributosFaltantesEntrada, "\n"), "Entrada de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Para guardar el registro es necesario ingresar todos los campos\nPor favor ingrese los siguientes campos:\n" + Listas.uneItems(atributosFaltantesEntrada, "\n"), "Entrada de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -256,7 +235,7 @@ namespace SistemaDEISA.vista
             }
             else
             {
-                MessageBox.Show("Para modificar el registro es necesario ingresar todos los campos\nPor favor ingrese los siguientes campos:\n" + AdministracionUsuarios_vista.uneItems(atributosFaltantesEntrada, "\n"), "Entrada de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Para modificar el registro es necesario ingresar todos los campos\nPor favor ingrese los siguientes campos:\n" + Listas.uneItems(atributosFaltantesEntrada, "\n"), "Entrada de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -277,7 +256,7 @@ namespace SistemaDEISA.vista
                 }
             }
             else {
-                MessageBox.Show("Para eliminar el registro es necesario ingresar\n" + uneItems(modelo.llavePrimaria(usuario), "\n"), "Entrada de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Para eliminar el registro es necesario ingresar\n" + Listas.uneItems(modelo.llavePrimaria(usuario), "\n"), "Entrada de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

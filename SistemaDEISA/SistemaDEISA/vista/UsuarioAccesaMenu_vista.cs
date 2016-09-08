@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Drawing;
 using System.Collections.Generic;
+using SistemaDEISA.utilerias;
 using SistemaDEISA.modelo;
 using SistemaDEISA.modelo.basedatos;
 
@@ -56,33 +57,10 @@ namespace SistemaDEISA.vista
             //menusAcceso_list = new List<SistemaDEISA.modelo.basedatos.Menu>();
             //menusSinAcceso_list = new List<SistemaDEISA.modelo.basedatos.Menu>();
         }
-
-        public static void establecerMenuListView(ListView menus_listView,SistemaDEISA.modelo.basedatos.Menu menu) {
-            menus_listView.SmallImageList.Images.Add((Image)global::SistemaDEISA.Properties.Resources.ResourceManager.GetObject(menu.imagen));
-            ListViewItem listViewItem = new ListViewItem();
-            listViewItem.ImageIndex = menus_listView.Items.Count;
-            //listViewItem.Text = menu.imagen;
-            listViewItem.SubItems.Add(menu.descripcion);
-            listViewItem.SubItems.Add(menu.nombre);
-            menus_listView.Items.Add(listViewItem);
-        }
-
-        public static void establecerMenusListView(ListView menus_listView, List<SistemaDEISA.modelo.basedatos.Menu> menus_list) {
-            int i;
-            menus_listView.SmallImageList.Images.Clear();
-            menus_listView.Items.Clear();
-            if (menus_list != null)
-            {
-                for (i = 0; i < menus_list.Count; i++)
-                {
-                    establecerMenuListView(menus_listView,menus_list[i]);
-                }
-            }
-        }
         
         private void establecerMenusAcceso(string cuenta) {
             menusAcceso_list = modelo.obtenerMenusAcceso(cuenta);
-            establecerMenusListView(menusAcceso_listView, menusAcceso_list);
+            Listas.establecerMenusListView(menusAcceso_listView, menusAcceso_list);
             if (menusAcceso_list == null) {
                 menusAcceso_list = new List<SistemaDEISA.modelo.basedatos.Menu>();
             }
@@ -90,7 +68,7 @@ namespace SistemaDEISA.vista
 
         private void establecerMenusSinAcceso(string cuenta) {
             menusSinAcceso_list = modelo.obtenerMenusSinAcceso(cuenta);
-            establecerMenusListView(menusSinAcceso_listView, menusSinAcceso_list);
+            Listas.establecerMenusListView(menusSinAcceso_listView, menusSinAcceso_list);
             if (menusSinAcceso_list == null) {
                 menusSinAcceso_list = new List<SistemaDEISA.modelo.basedatos.Menu>();
             }
@@ -119,8 +97,8 @@ namespace SistemaDEISA.vista
                 menusAcceso_list.Add(menusSinAcceso_list[seleccion[i].ImageIndex - i]);
                 menusSinAcceso_list.RemoveAt(seleccion[i].ImageIndex - i);
             }
-            establecerMenusListView(menusSinAcceso_listView, menusSinAcceso_list);
-            establecerMenusListView(menusAcceso_listView, menusAcceso_list);
+            Listas.establecerMenusListView(menusSinAcceso_listView, menusSinAcceso_list);
+            Listas.establecerMenusListView(menusAcceso_listView, menusAcceso_list);
         }
 
         private void quitar_button_Click(object sender, EventArgs e)
@@ -132,8 +110,8 @@ namespace SistemaDEISA.vista
                 menusSinAcceso_list.Add(menusAcceso_list[seleccion[i].ImageIndex-i]);
                 menusAcceso_list.RemoveAt(seleccion[i].ImageIndex-i);
             }
-            establecerMenusListView(menusSinAcceso_listView, menusSinAcceso_list);
-            establecerMenusListView(menusAcceso_listView, menusAcceso_list);
+            Listas.establecerMenusListView(menusSinAcceso_listView, menusSinAcceso_list);
+            Listas.establecerMenusListView(menusAcceso_listView, menusAcceso_list);
         }
 
         private void ejecutar_button_Click(object sender, EventArgs e)

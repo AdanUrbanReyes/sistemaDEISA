@@ -3,3 +3,9 @@ Registro no encontrado
 Base de datos
 Accion exitosa
 src.GetType().GetProperty(propName).GetValue(src, null);
+
+#Nombre para los funciones CRUD
+insertar<nombre objeto>(objetos necesarios para realizar la insercion);  puede regresar lo que sea pero lo mas comun es bool u el objeto insertado
+obtener<nombre objeto>(cosas necesarias para generar el filtro); deveria regresar un objeto o una lista de objeto
+actualizar<nombre objeto>(cosas necesarias para la actualizacion); puede regresar lo que sea pero lo mas comun es bool u el objeto actualizado
+eliminar<nombre objeto>

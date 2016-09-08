@@ -1,4 +1,15 @@
-DESCRIBE usuario;
+DELIMITER $
+CREATE PROCEDURE llave_primaria_de_una_tabla(in nombre_basedatos varchar(64),in nombre_tabla varchar(64))
+begin 
+	SELECT  COLUMN_NAME 
+	FROM information_schema.COLUMNS 
+	WHERE TABLE_NAME = nombre_tabla AND -- name of table
+   	table_schema = nombre_basedatos AND -- name of schema
+	   column_key = "PRI";-- for get attributes PRIMARY KEY
+END $
+DELIMITER ;
+-- CALL llave_primaria_de_una_tabla("DEISA","usuario");
+
 DELIMITER $
 CREATE PROCEDURE menusSinAcceso(IN cuenta VARCHAR(45))
 BEGIN
@@ -16,7 +27,7 @@ BEGIN
 		);
 END $
 DELIMITER ;
-CALL menusSinAcceso('Alizita');
+-- CALL menusSinAcceso('Alizita');
 
 DELIMITER $
 CREATE PROCEDURE menusAcceso(IN cuenta VARCHAR(45))
@@ -30,4 +41,4 @@ BEGIN
 		m.nombre=uam.menu;
 END $
 DELIMITER ;
-CALL menusAcceso('Alexa');
+-- CALL menusAcceso('Alexa');

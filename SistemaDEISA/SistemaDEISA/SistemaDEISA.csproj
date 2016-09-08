@@ -48,24 +48,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="modelo\AdministracionClientes_modelo.cs" />
     <Compile Include="modelo\AdministracionDirecciones_modelo.cs" />
     <Compile Include="modelo\AdministracionUsuarios_modelo.cs" />
+    <Compile Include="modelo\basedatos\Celular_cliente.cs" />
+    <Compile Include="modelo\basedatos\Cliente.cs" />
+    <Compile Include="modelo\basedatos\Codigo_postal.cs" />
+    <Compile Include="modelo\basedatos\Correo_electronico_cliente.cs" />
     <Compile Include="modelo\basedatos\Departamento.cs" />
+    <Compile Include="modelo\basedatos\Direccion.cs" />
     <Compile Include="modelo\basedatos\Modulo.cs" />
+    <Compile Include="modelo\basedatos\Telefono_cliente.cs" />
     <Compile Include="modelo\basedatos\Usuario.cs" />
     <Compile Include="modelo\basedatos\Usuario_accesa_menu.cs" />
     <Compile Include="modelo\Copia.cs" />
+    <Compile Include="modelo\Cotizaciones_modelo.cs" />
     <Compile Include="modelo\InicioSesion_modelo.cs" />
     <Compile Include="modelo\basedatos\Menu.cs" />
     <Compile Include="modelo\modulos\AdministracionClientes_modulo.cs" />
     <Compile Include="modelo\modulos\AdministracionDirecciones_modulo.cs" />
     <Compile Include="modelo\modulos\AdministracionUsuarios_modulo.cs" />
+    <Compile Include="modelo\modulos\Cotizaciones_modulo.cs" />
     <Compile Include="modelo\modulos\Manejador.cs" />
     <Compile Include="modelo\ConexionBasedatos.cs" />
     <Compile Include="modelo\modulos\UsuarioAccesaMenu_modulo.cs" />
     <Compile Include="modelo\Principal_modelo.cs" />
     <Compile Include="modelo\UsuarioAccesaMenu_modelo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utilerias\ItemMenu.cs" />
+    <Compile Include="utilerias\Listas.cs" />
     <Compile Include="utilerias\Mysql.cs" />
     <Compile Include="vista\AdministracionClientes_vista.cs">
       <SubType>Form</SubType>
@@ -84,6 +95,12 @@
     </Compile>
     <Compile Include="vista\AdministracionUsuarios_vista.Designer.cs">
       <DependentUpon>AdministracionUsuarios_vista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\Cotizaciones_vista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\Cotizaciones_vista.Designer.cs">
+      <DependentUpon>Cotizaciones_vista.cs</DependentUpon>
     </Compile>
     <Compile Include="vista\InicioSesion_vista.cs">
       <SubType>Form</SubType>
@@ -121,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vista\AdministracionUsuarios_vista.resx">
       <DependentUpon>AdministracionUsuarios_vista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\Cotizaciones_vista.resx">
+      <DependentUpon>Cotizaciones_vista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\InicioSesion_vista.resx">
       <DependentUpon>InicioSesion_vista.cs</DependentUpon>
@@ -212,6 +232,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\direcciones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cotizaciones.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

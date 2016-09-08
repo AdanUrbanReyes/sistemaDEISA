@@ -11,7 +11,7 @@ namespace SistemaDEISA.modelo
         private static string servidor = "localhost";//"192.168.2.151";
         private static string basedatos = "deisa";//"deisa_db1";
         private static string usuario = "root";
-        private static string clave = "A1y3a1n7?";//"s1i3s7t1e1mas?";
+        private static string clave = "A1y3a1n7?";//"";
         private static int puerto = 3306;
 
         private MySqlConnection conexion = null;

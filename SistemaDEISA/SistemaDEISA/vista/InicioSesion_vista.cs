@@ -28,6 +28,10 @@ namespace SistemaDEISA.vista
 
         private void iniciar_button_Click(object sender, EventArgs e)
         {
+            /*
+                modelo.trataIniciarConexionBasedatos((this.local_radioButton.Checked) ? "Local" : "Remoto");
+                modelo.insertaCodigosPostales();
+             */
             string cuenta = this.cuenta_textBox.Text.Trim();
             string clave = this.clave_textBox.Text;
             if (cuenta == string.Empty || clave == string.Empty)

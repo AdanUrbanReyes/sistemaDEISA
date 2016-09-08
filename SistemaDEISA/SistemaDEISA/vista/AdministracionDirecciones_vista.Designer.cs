@@ -29,247 +29,311 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionDirecciones_vista));
-            this.codigoPostal_groupBox = new System.Windows.Forms.GroupBox();
-            this.codigoPostal_label = new System.Windows.Forms.Label();
             this.direccion_groupBox = new System.Windows.Forms.GroupBox();
-            this.id_label = new System.Windows.Forms.Label();
-            this.buscar_button = new System.Windows.Forms.Button();
+            this.numeroInterior_textBox = new System.Windows.Forms.TextBox();
+            this.numeroInterior_label = new System.Windows.Forms.Label();
+            this.numeroExterior_textBox = new System.Windows.Forms.TextBox();
+            this.numeroExterior_label = new System.Windows.Forms.Label();
+            this.idCodigoPostal_textBox = new System.Windows.Forms.TextBox();
+            this.idCodigoPostal_label = new System.Windows.Forms.Label();
+            this.codigoPostal_textBox = new System.Windows.Forms.TextBox();
+            this.colonia_label = new System.Windows.Forms.Label();
             this.calle_label = new System.Windows.Forms.Label();
             this.calle_textBox = new System.Windows.Forms.TextBox();
-            this.guardar_button = new System.Windows.Forms.Button();
-            this.numeroExterior_label = new System.Windows.Forms.Label();
-            this.numeroExterior_textBox = new System.Windows.Forms.TextBox();
-            this.estado_label = new System.Windows.Forms.Label();
-            this.municipio_label = new System.Windows.Forms.Label();
-            this.id_comboBox = new System.Windows.Forms.ComboBox();
-            this.codigoPostal_comboBox = new System.Windows.Forms.ComboBox();
-            this.estado_comboBox = new System.Windows.Forms.ComboBox();
+            this.asentamiento_comboBox = new System.Windows.Forms.ComboBox();
             this.municipio_comboBox = new System.Windows.Forms.ComboBox();
-            this.colonia_comboBox = new System.Windows.Forms.ComboBox();
-            this.colonia_label = new System.Windows.Forms.Label();
-            this.modificar_button = new System.Windows.Forms.Button();
+            this.estado_comboBox = new System.Windows.Forms.ComboBox();
+            this.municipio_label = new System.Windows.Forms.Label();
+            this.estado_label = new System.Windows.Forms.Label();
+            this.codigoPostal_label = new System.Windows.Forms.Label();
+            this.buscar_button = new System.Windows.Forms.Button();
+            this.guardar_button = new System.Windows.Forms.Button();
             this.eliminar_button = new System.Windows.Forms.Button();
-            this.codigoPostal_groupBox.SuspendLayout();
+            this.direcciones_listView = new System.Windows.Forms.ListView();
+            this.codigoPostal_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.estado_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.municipio_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.asentamiento_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.calle_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.numeroExterior_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.numeroInterior_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.direccion_groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // codigoPostal_groupBox
-            // 
-            this.codigoPostal_groupBox.Controls.Add(this.colonia_label);
-            this.codigoPostal_groupBox.Controls.Add(this.colonia_comboBox);
-            this.codigoPostal_groupBox.Controls.Add(this.municipio_comboBox);
-            this.codigoPostal_groupBox.Controls.Add(this.estado_comboBox);
-            this.codigoPostal_groupBox.Controls.Add(this.codigoPostal_comboBox);
-            this.codigoPostal_groupBox.Controls.Add(this.municipio_label);
-            this.codigoPostal_groupBox.Controls.Add(this.estado_label);
-            this.codigoPostal_groupBox.Controls.Add(this.codigoPostal_label);
-            this.codigoPostal_groupBox.Location = new System.Drawing.Point(12, 152);
-            this.codigoPostal_groupBox.Name = "codigoPostal_groupBox";
-            this.codigoPostal_groupBox.Size = new System.Drawing.Size(460, 213);
-            this.codigoPostal_groupBox.TabIndex = 0;
-            this.codigoPostal_groupBox.TabStop = false;
-            this.codigoPostal_groupBox.Text = "Codigo postal";
-            // 
-            // codigoPostal_label
-            // 
-            this.codigoPostal_label.AutoSize = true;
-            this.codigoPostal_label.Location = new System.Drawing.Point(108, 43);
-            this.codigoPostal_label.Name = "codigoPostal_label";
-            this.codigoPostal_label.Size = new System.Drawing.Size(106, 17);
-            this.codigoPostal_label.TabIndex = 0;
-            this.codigoPostal_label.Text = "Codigo postal:";
-            // 
             // direccion_groupBox
             // 
-            this.direccion_groupBox.Controls.Add(this.id_comboBox);
+            this.direccion_groupBox.Controls.Add(this.numeroInterior_textBox);
+            this.direccion_groupBox.Controls.Add(this.numeroInterior_label);
             this.direccion_groupBox.Controls.Add(this.numeroExterior_textBox);
             this.direccion_groupBox.Controls.Add(this.numeroExterior_label);
-            this.direccion_groupBox.Controls.Add(this.calle_textBox);
+            this.direccion_groupBox.Controls.Add(this.idCodigoPostal_textBox);
+            this.direccion_groupBox.Controls.Add(this.idCodigoPostal_label);
+            this.direccion_groupBox.Controls.Add(this.codigoPostal_textBox);
+            this.direccion_groupBox.Controls.Add(this.colonia_label);
             this.direccion_groupBox.Controls.Add(this.calle_label);
-            this.direccion_groupBox.Controls.Add(this.buscar_button);
-            this.direccion_groupBox.Controls.Add(this.id_label);
-            this.direccion_groupBox.Location = new System.Drawing.Point(12, 3);
+            this.direccion_groupBox.Controls.Add(this.calle_textBox);
+            this.direccion_groupBox.Controls.Add(this.asentamiento_comboBox);
+            this.direccion_groupBox.Controls.Add(this.municipio_comboBox);
+            this.direccion_groupBox.Controls.Add(this.estado_comboBox);
+            this.direccion_groupBox.Controls.Add(this.municipio_label);
+            this.direccion_groupBox.Controls.Add(this.estado_label);
+            this.direccion_groupBox.Controls.Add(this.codigoPostal_label);
+            this.direccion_groupBox.Location = new System.Drawing.Point(12, 12);
             this.direccion_groupBox.Name = "direccion_groupBox";
-            this.direccion_groupBox.Size = new System.Drawing.Size(460, 132);
-            this.direccion_groupBox.TabIndex = 1;
+            this.direccion_groupBox.Size = new System.Drawing.Size(460, 263);
+            this.direccion_groupBox.TabIndex = 0;
             this.direccion_groupBox.TabStop = false;
             this.direccion_groupBox.Text = "Direccion";
             // 
-            // id_label
+            // numeroInterior_textBox
             // 
-            this.id_label.AutoSize = true;
-            this.id_label.Location = new System.Drawing.Point(166, 36);
-            this.id_label.Name = "id_label";
-            this.id_label.Size = new System.Drawing.Size(25, 17);
-            this.id_label.TabIndex = 0;
-            this.id_label.Text = "ID:";
+            this.numeroInterior_textBox.Location = new System.Drawing.Point(6, 233);
+            this.numeroInterior_textBox.MaxLength = 11;
+            this.numeroInterior_textBox.Name = "numeroInterior_textBox";
+            this.numeroInterior_textBox.Size = new System.Drawing.Size(120, 23);
+            this.numeroInterior_textBox.TabIndex = 13;
             // 
-            // buscar_button
+            // numeroInterior_label
             // 
-            this.buscar_button.BackgroundImage = global::SistemaDEISA.Properties.Resources.buscar;
-            this.buscar_button.Location = new System.Drawing.Point(112, 20);
-            this.buscar_button.Name = "buscar_button";
-            this.buscar_button.Size = new System.Drawing.Size(48, 48);
-            this.buscar_button.TabIndex = 2;
-            this.buscar_button.UseVisualStyleBackColor = true;
-            this.buscar_button.Click += new System.EventHandler(this.buscar_button_Click);
+            this.numeroInterior_label.AutoSize = true;
+            this.numeroInterior_label.Location = new System.Drawing.Point(3, 213);
+            this.numeroInterior_label.Name = "numeroInterior_label";
+            this.numeroInterior_label.Size = new System.Drawing.Size(83, 17);
+            this.numeroInterior_label.TabIndex = 0;
+            this.numeroInterior_label.Text = "No. Interior:";
             // 
-            // calle_label
+            // numeroExterior_textBox
             // 
-            this.calle_label.AutoSize = true;
-            this.calle_label.Location = new System.Drawing.Point(6, 74);
-            this.calle_label.Name = "calle_label";
-            this.calle_label.Size = new System.Drawing.Size(46, 17);
-            this.calle_label.TabIndex = 3;
-            this.calle_label.Text = "Calle:";
-            // 
-            // calle_textBox
-            // 
-            this.calle_textBox.Location = new System.Drawing.Point(9, 94);
-            this.calle_textBox.MaxLength = 50;
-            this.calle_textBox.Name = "calle_textBox";
-            this.calle_textBox.Size = new System.Drawing.Size(257, 23);
-            this.calle_textBox.TabIndex = 4;
-            // 
-            // guardar_button
-            // 
-            this.guardar_button.BackgroundImage = global::SistemaDEISA.Properties.Resources.guardar;
-            this.guardar_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guardar_button.Location = new System.Drawing.Point(299, 371);
-            this.guardar_button.Name = "guardar_button";
-            this.guardar_button.Size = new System.Drawing.Size(48, 48);
-            this.guardar_button.TabIndex = 2;
-            this.guardar_button.UseVisualStyleBackColor = true;
-            this.guardar_button.Click += new System.EventHandler(this.guardar_button_Click);
+            this.numeroExterior_textBox.Location = new System.Drawing.Point(312, 184);
+            this.numeroExterior_textBox.MaxLength = 11;
+            this.numeroExterior_textBox.Name = "numeroExterior_textBox";
+            this.numeroExterior_textBox.Size = new System.Drawing.Size(115, 23);
+            this.numeroExterior_textBox.TabIndex = 12;
             // 
             // numeroExterior_label
             // 
             this.numeroExterior_label.AutoSize = true;
-            this.numeroExterior_label.Location = new System.Drawing.Point(284, 74);
+            this.numeroExterior_label.Location = new System.Drawing.Point(309, 163);
             this.numeroExterior_label.Name = "numeroExterior_label";
-            this.numeroExterior_label.Size = new System.Drawing.Size(115, 17);
-            this.numeroExterior_label.TabIndex = 5;
-            this.numeroExterior_label.Text = "Numero exterior:";
+            this.numeroExterior_label.Size = new System.Drawing.Size(85, 17);
+            this.numeroExterior_label.TabIndex = 14;
+            this.numeroExterior_label.Text = "No. Exterior:";
             // 
-            // numeroExterior_textBox
+            // idCodigoPostal_textBox
             // 
-            this.numeroExterior_textBox.Location = new System.Drawing.Point(287, 94);
-            this.numeroExterior_textBox.MaxLength = 10;
-            this.numeroExterior_textBox.Name = "numeroExterior_textBox";
-            this.numeroExterior_textBox.Size = new System.Drawing.Size(142, 23);
-            this.numeroExterior_textBox.TabIndex = 6;
+            this.idCodigoPostal_textBox.Location = new System.Drawing.Point(117, 131);
+            this.idCodigoPostal_textBox.MaxLength = 7;
+            this.idCodigoPostal_textBox.Name = "idCodigoPostal_textBox";
+            this.idCodigoPostal_textBox.ReadOnly = true;
+            this.idCodigoPostal_textBox.Size = new System.Drawing.Size(100, 23);
+            this.idCodigoPostal_textBox.TabIndex = 7;
             // 
-            // estado_label
+            // idCodigoPostal_label
             // 
-            this.estado_label.AutoSize = true;
-            this.estado_label.Location = new System.Drawing.Point(55, 85);
-            this.estado_label.Name = "estado_label";
-            this.estado_label.Size = new System.Drawing.Size(56, 17);
-            this.estado_label.TabIndex = 2;
-            this.estado_label.Text = "Estado:";
+            this.idCodigoPostal_label.AutoSize = true;
+            this.idCodigoPostal_label.Location = new System.Drawing.Point(86, 134);
+            this.idCodigoPostal_label.Name = "idCodigoPostal_label";
+            this.idCodigoPostal_label.Size = new System.Drawing.Size(25, 17);
+            this.idCodigoPostal_label.TabIndex = 9;
+            this.idCodigoPostal_label.Text = "ID:";
+            // 
+            // codigoPostal_textBox
+            // 
+            this.codigoPostal_textBox.Location = new System.Drawing.Point(333, 131);
+            this.codigoPostal_textBox.MaxLength = 6;
+            this.codigoPostal_textBox.Name = "codigoPostal_textBox";
+            this.codigoPostal_textBox.ReadOnly = true;
+            this.codigoPostal_textBox.Size = new System.Drawing.Size(95, 23);
+            this.codigoPostal_textBox.TabIndex = 8;
+            // 
+            // colonia_label
+            // 
+            this.colonia_label.AutoSize = true;
+            this.colonia_label.Location = new System.Drawing.Point(9, 103);
+            this.colonia_label.Name = "colonia_label";
+            this.colonia_label.Size = new System.Drawing.Size(102, 17);
+            this.colonia_label.TabIndex = 6;
+            this.colonia_label.Text = "Asentamiento:";
+            // 
+            // calle_label
+            // 
+            this.calle_label.AutoSize = true;
+            this.calle_label.Location = new System.Drawing.Point(3, 163);
+            this.calle_label.Name = "calle_label";
+            this.calle_label.Size = new System.Drawing.Size(168, 17);
+            this.calle_label.TabIndex = 15;
+            this.calle_label.Text = "Calle/Avenida/Calzada:";
+            // 
+            // calle_textBox
+            // 
+            this.calle_textBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.calle_textBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.calle_textBox.Location = new System.Drawing.Point(6, 183);
+            this.calle_textBox.MaxLength = 100;
+            this.calle_textBox.Name = "calle_textBox";
+            this.calle_textBox.Size = new System.Drawing.Size(289, 23);
+            this.calle_textBox.TabIndex = 11;
+            // 
+            // asentamiento_comboBox
+            // 
+            this.asentamiento_comboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.asentamiento_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.asentamiento_comboBox.FormattingEnabled = true;
+            this.asentamiento_comboBox.Location = new System.Drawing.Point(117, 100);
+            this.asentamiento_comboBox.MaxLength = 100;
+            this.asentamiento_comboBox.Name = "asentamiento_comboBox";
+            this.asentamiento_comboBox.Size = new System.Drawing.Size(311, 25);
+            this.asentamiento_comboBox.TabIndex = 5;
+            this.asentamiento_comboBox.Enter += new System.EventHandler(this.asentamiento_comboBox_Enter);
+            this.asentamiento_comboBox.Leave += new System.EventHandler(this.asentamiento_comboBox_Leave);
+            // 
+            // municipio_comboBox
+            // 
+            this.municipio_comboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.municipio_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.municipio_comboBox.FormattingEnabled = true;
+            this.municipio_comboBox.Location = new System.Drawing.Point(117, 62);
+            this.municipio_comboBox.MaxLength = 100;
+            this.municipio_comboBox.Name = "municipio_comboBox";
+            this.municipio_comboBox.Size = new System.Drawing.Size(311, 25);
+            this.municipio_comboBox.TabIndex = 3;
+            this.municipio_comboBox.Enter += new System.EventHandler(this.municipio_comboBox_Enter);
+            this.municipio_comboBox.Leave += new System.EventHandler(this.municipio_comboBox_Leave);
+            // 
+            // estado_comboBox
+            // 
+            this.estado_comboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.estado_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.estado_comboBox.FormattingEnabled = true;
+            this.estado_comboBox.Location = new System.Drawing.Point(117, 22);
+            this.estado_comboBox.MaxLength = 100;
+            this.estado_comboBox.Name = "estado_comboBox";
+            this.estado_comboBox.Size = new System.Drawing.Size(311, 25);
+            this.estado_comboBox.TabIndex = 1;
+            this.estado_comboBox.Enter += new System.EventHandler(this.estado_comboBox_Enter);
+            this.estado_comboBox.Leave += new System.EventHandler(this.estado_comboBox_Leave);
             // 
             // municipio_label
             // 
             this.municipio_label.AutoSize = true;
-            this.municipio_label.Location = new System.Drawing.Point(37, 125);
+            this.municipio_label.Location = new System.Drawing.Point(37, 65);
             this.municipio_label.Name = "municipio_label";
             this.municipio_label.Size = new System.Drawing.Size(74, 17);
             this.municipio_label.TabIndex = 4;
             this.municipio_label.Text = "Municipio:";
             // 
-            // id_comboBox
+            // estado_label
             // 
-            this.id_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.id_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.id_comboBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.id_comboBox.FormattingEnabled = true;
-            this.id_comboBox.Location = new System.Drawing.Point(197, 33);
-            this.id_comboBox.MaxLength = 10;
-            this.id_comboBox.Name = "id_comboBox";
-            this.id_comboBox.Size = new System.Drawing.Size(129, 25);
-            this.id_comboBox.TabIndex = 7;
+            this.estado_label.AutoSize = true;
+            this.estado_label.Location = new System.Drawing.Point(55, 25);
+            this.estado_label.Name = "estado_label";
+            this.estado_label.Size = new System.Drawing.Size(56, 17);
+            this.estado_label.TabIndex = 2;
+            this.estado_label.Text = "Estado:";
             // 
-            // codigoPostal_comboBox
+            // codigoPostal_label
             // 
-            this.codigoPostal_comboBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.codigoPostal_comboBox.FormattingEnabled = true;
-            this.codigoPostal_comboBox.Location = new System.Drawing.Point(220, 40);
-            this.codigoPostal_comboBox.MaxLength = 10;
-            this.codigoPostal_comboBox.Name = "codigoPostal_comboBox";
-            this.codigoPostal_comboBox.Size = new System.Drawing.Size(130, 25);
-            this.codigoPostal_comboBox.TabIndex = 5;
+            this.codigoPostal_label.AutoSize = true;
+            this.codigoPostal_label.Location = new System.Drawing.Point(221, 134);
+            this.codigoPostal_label.Name = "codigoPostal_label";
+            this.codigoPostal_label.Size = new System.Drawing.Size(106, 17);
+            this.codigoPostal_label.TabIndex = 10;
+            this.codigoPostal_label.Text = "Codigo postal:";
             // 
-            // estado_comboBox
+            // buscar_button
             // 
-            this.estado_comboBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.estado_comboBox.FormattingEnabled = true;
-            this.estado_comboBox.Location = new System.Drawing.Point(117, 82);
-            this.estado_comboBox.MaxLength = 30;
-            this.estado_comboBox.Name = "estado_comboBox";
-            this.estado_comboBox.Size = new System.Drawing.Size(267, 25);
-            this.estado_comboBox.TabIndex = 6;
+            this.buscar_button.BackgroundImage = global::SistemaDEISA.Properties.Resources.buscar;
+            this.buscar_button.Location = new System.Drawing.Point(299, 407);
+            this.buscar_button.Name = "buscar_button";
+            this.buscar_button.Size = new System.Drawing.Size(48, 48);
+            this.buscar_button.TabIndex = 8;
+            this.buscar_button.UseVisualStyleBackColor = true;
+            this.buscar_button.Click += new System.EventHandler(this.buscar_button_Click);
             // 
-            // municipio_comboBox
+            // guardar_button
             // 
-            this.municipio_comboBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.municipio_comboBox.FormattingEnabled = true;
-            this.municipio_comboBox.Location = new System.Drawing.Point(117, 122);
-            this.municipio_comboBox.MaxLength = 30;
-            this.municipio_comboBox.Name = "municipio_comboBox";
-            this.municipio_comboBox.Size = new System.Drawing.Size(267, 25);
-            this.municipio_comboBox.TabIndex = 7;
-            // 
-            // colonia_comboBox
-            // 
-            this.colonia_comboBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.colonia_comboBox.FormattingEnabled = true;
-            this.colonia_comboBox.Location = new System.Drawing.Point(117, 160);
-            this.colonia_comboBox.MaxLength = 30;
-            this.colonia_comboBox.Name = "colonia_comboBox";
-            this.colonia_comboBox.Size = new System.Drawing.Size(267, 25);
-            this.colonia_comboBox.TabIndex = 8;
-            this.colonia_comboBox.SelectedIndexChanged += new System.EventHandler(this.colonia_comboBox_SelectedIndexChanged);
-            // 
-            // colonia_label
-            // 
-            this.colonia_label.AutoSize = true;
-            this.colonia_label.Location = new System.Drawing.Point(47, 163);
-            this.colonia_label.Name = "colonia_label";
-            this.colonia_label.Size = new System.Drawing.Size(64, 17);
-            this.colonia_label.TabIndex = 9;
-            this.colonia_label.Text = "Colonia:";
-            // 
-            // modificar_button
-            // 
-            this.modificar_button.BackgroundImage = global::SistemaDEISA.Properties.Resources.modificar;
-            this.modificar_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.modificar_button.Location = new System.Drawing.Point(353, 371);
-            this.modificar_button.Name = "modificar_button";
-            this.modificar_button.Size = new System.Drawing.Size(48, 48);
-            this.modificar_button.TabIndex = 3;
-            this.modificar_button.UseVisualStyleBackColor = true;
-            this.modificar_button.Click += new System.EventHandler(this.modificar_button_Click);
+            this.guardar_button.BackgroundImage = global::SistemaDEISA.Properties.Resources.guardar;
+            this.guardar_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guardar_button.Location = new System.Drawing.Point(353, 407);
+            this.guardar_button.Name = "guardar_button";
+            this.guardar_button.Size = new System.Drawing.Size(48, 48);
+            this.guardar_button.TabIndex = 9;
+            this.guardar_button.UseVisualStyleBackColor = true;
+            this.guardar_button.Click += new System.EventHandler(this.guardar_button_Click);
             // 
             // eliminar_button
             // 
             this.eliminar_button.BackgroundImage = global::SistemaDEISA.Properties.Resources.eliminar;
             this.eliminar_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.eliminar_button.Location = new System.Drawing.Point(407, 371);
+            this.eliminar_button.Location = new System.Drawing.Point(407, 407);
             this.eliminar_button.Name = "eliminar_button";
             this.eliminar_button.Size = new System.Drawing.Size(48, 48);
-            this.eliminar_button.TabIndex = 4;
+            this.eliminar_button.TabIndex = 11;
             this.eliminar_button.UseVisualStyleBackColor = true;
+            this.eliminar_button.Click += new System.EventHandler(this.eliminar_button_Click);
+            // 
+            // direcciones_listView
+            // 
+            this.direcciones_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.codigoPostal_columnHeader,
+            this.estado_columnHeader,
+            this.municipio_columnHeader,
+            this.asentamiento_columnHeader,
+            this.calle_columnHeader,
+            this.numeroExterior_columnHeader,
+            this.numeroInterior_columnHeader});
+            this.direcciones_listView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.direcciones_listView.FullRowSelect = true;
+            this.direcciones_listView.GridLines = true;
+            this.direcciones_listView.Location = new System.Drawing.Point(13, 281);
+            this.direcciones_listView.Name = "direcciones_listView";
+            this.direcciones_listView.Size = new System.Drawing.Size(459, 120);
+            this.direcciones_listView.TabIndex = 12;
+            this.direcciones_listView.UseCompatibleStateImageBehavior = false;
+            this.direcciones_listView.View = System.Windows.Forms.View.Details;
+            // 
+            // codigoPostal_columnHeader
+            // 
+            this.codigoPostal_columnHeader.Text = "Codigo postal";
+            // 
+            // estado_columnHeader
+            // 
+            this.estado_columnHeader.Text = "Estado";
+            this.estado_columnHeader.Width = 150;
+            // 
+            // municipio_columnHeader
+            // 
+            this.municipio_columnHeader.Text = "Municipio";
+            this.municipio_columnHeader.Width = 150;
+            // 
+            // asentamiento_columnHeader
+            // 
+            this.asentamiento_columnHeader.Text = "Asentamiento";
+            this.asentamiento_columnHeader.Width = 150;
+            // 
+            // calle_columnHeader
+            // 
+            this.calle_columnHeader.Text = "Calle";
+            this.calle_columnHeader.Width = 150;
+            // 
+            // numeroExterior_columnHeader
+            // 
+            this.numeroExterior_columnHeader.Text = "Numero Exterior";
+            // 
+            // numeroInterior_columnHeader
+            // 
+            this.numeroInterior_columnHeader.Text = "Numero Interior";
             // 
             // AdministracionDirecciones_vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 431);
+            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.direcciones_listView);
             this.Controls.Add(this.eliminar_button);
-            this.Controls.Add(this.modificar_button);
             this.Controls.Add(this.guardar_button);
+            this.Controls.Add(this.buscar_button);
             this.Controls.Add(this.direccion_groupBox);
-            this.Controls.Add(this.codigoPostal_groupBox);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -280,8 +344,6 @@
             this.Text = "Administracion Direcciones";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdministracionDirecciones_vista_FormClosed);
             this.Load += new System.EventHandler(this.AdministracionDirecciones_vista_Load);
-            this.codigoPostal_groupBox.ResumeLayout(false);
-            this.codigoPostal_groupBox.PerformLayout();
             this.direccion_groupBox.ResumeLayout(false);
             this.direccion_groupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -290,25 +352,33 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox codigoPostal_groupBox;
-        private System.Windows.Forms.Label codigoPostal_label;
         private System.Windows.Forms.GroupBox direccion_groupBox;
-        private System.Windows.Forms.Label id_label;
+        private System.Windows.Forms.Label codigoPostal_label;
         private System.Windows.Forms.TextBox calle_textBox;
         private System.Windows.Forms.Label calle_label;
         private System.Windows.Forms.Button buscar_button;
         private System.Windows.Forms.Button guardar_button;
-        private System.Windows.Forms.Label numeroExterior_label;
-        private System.Windows.Forms.TextBox numeroExterior_textBox;
         private System.Windows.Forms.Label estado_label;
         private System.Windows.Forms.Label municipio_label;
-        private System.Windows.Forms.ComboBox id_comboBox;
-        private System.Windows.Forms.ComboBox codigoPostal_comboBox;
         private System.Windows.Forms.ComboBox estado_comboBox;
         private System.Windows.Forms.ComboBox municipio_comboBox;
         private System.Windows.Forms.Label colonia_label;
-        private System.Windows.Forms.ComboBox colonia_comboBox;
-        private System.Windows.Forms.Button modificar_button;
+        private System.Windows.Forms.ComboBox asentamiento_comboBox;
         private System.Windows.Forms.Button eliminar_button;
+        private System.Windows.Forms.ListView direcciones_listView;
+        private System.Windows.Forms.ColumnHeader codigoPostal_columnHeader;
+        private System.Windows.Forms.ColumnHeader estado_columnHeader;
+        private System.Windows.Forms.ColumnHeader municipio_columnHeader;
+        private System.Windows.Forms.ColumnHeader asentamiento_columnHeader;
+        private System.Windows.Forms.ColumnHeader calle_columnHeader;
+        private System.Windows.Forms.TextBox codigoPostal_textBox;
+        private System.Windows.Forms.Label idCodigoPostal_label;
+        private System.Windows.Forms.TextBox idCodigoPostal_textBox;
+        private System.Windows.Forms.TextBox numeroExterior_textBox;
+        private System.Windows.Forms.Label numeroExterior_label;
+        private System.Windows.Forms.Label numeroInterior_label;
+        private System.Windows.Forms.TextBox numeroInterior_textBox;
+        private System.Windows.Forms.ColumnHeader numeroExterior_columnHeader;
+        private System.Windows.Forms.ColumnHeader numeroInterior_columnHeader;
     }
 }

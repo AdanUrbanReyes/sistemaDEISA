@@ -14,9 +14,43 @@ namespace SistemaDEISA.modelo
     {
         private static string pathIPPublicaServidorMysql = @"C:\sistemaDEISA\conexionRemota\ipPublicaServidorMysql.dat";
         private static string pathIPPrivadaServidorMysql = @"C:\sistemaDEISA\conexionRemota\ipPrivadaServidorMysql.dat";
-        private const string servidorDNSMysql = "deisacv.dlinkddns.com";
+
+        //private static string pathCodigoPostal = @"C:\Users\Ayan\Downloads\CPdescargatxt\CPdescarga.txt";
+        
         private ConexionBasedatos conexionBasedatos;
         
+        /*
+        public void insertaCodigosPostales(){
+            string linea = null;
+            string[] codigoPostal = null;
+            StreamReader archivo;
+            try
+            {
+                archivo = new StreamReader(pathCodigoPostal, System.Text.Encoding.Default, false);
+                while ((linea = archivo.ReadLine()) != null )
+                {
+                    codigoPostal = linea.Split('|');
+                    conexionBasedatos.ejecutaSentenciaIUD("INSERT INTO codigo_postal VALUE (" + codigoPostal[0] + ",'" + Mysql.escapaSQL(codigoPostal[4]) + "','" + Mysql.escapaSQL(codigoPostal[3]) + "','" + Mysql.escapaSQL(codigoPostal[1]) + "');");
+//conexionBasedatos.ejecutaSentenciaIUD("INSERT INTO codigo_postal_colonia VALUE ("+ codigoPostal[0] +",'"+Mysql.escapaSQL(codigoPostal[1])+"');");
+
+//                  Console.WriteLine("INSERT INTO codigo_postal VALUE (" + codigoPostal[0] + ",'" + Mysql.escapaSQL(codigoPostal[4]) + "','" + Mysql.escapaSQL(codigoPostal[3]) + "');");
+  //                  Console.WriteLine("INSERT INTO codigo_postal_colonia VALUE (" + codigoPostal[0] + ",'" + Mysql.escapaSQL(codigoPostal[1]) + "');");                    
+
+                    Console.WriteLine("codigoPostal = " + codigoPostal[0]);
+                    Console.WriteLine("colonia = " + codigoPostal[1]);
+                    Console.WriteLine("municipio = " + codigoPostal[3]);
+                    Console.WriteLine("estado = " + codigoPostal[4]);
+                }
+                archivo.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("ERROR al leer linea del archivo "+ e.ToString());
+            }
+            //conexionBasedatos.terminarTransaccion();
+        }
+        */
+
         /// <summary>
         /// Trata de leer la primera linea de un archivo la cual deberia corresponder
         /// con una IP en caso de algun ERROR como no encontrar el archivo, se regresa
@@ -61,19 +95,19 @@ namespace SistemaDEISA.modelo
             {
                 conexionBasedatos = new ConexionBasedatos("localhost", "deisa", "root", "A1y3a1n7?", 3306);
                 //IP = InicioSesion_modelo.obtenerIPServidorMysql(pathIPPrivadaServidorMysql);
-                //conexionBasedatos = Mysql.obtenerInstancia(IP, "deisa_db1", "root", "s1i3s7t1e1mas?", 3306);
+                //conexionBasedatos = Mysql.obtenerInstancia(IP, "", "root", "", 3306);
             }
             else
             {
                 IP = obtenerIPServidorMysql(pathIPPublicaServidorMysql);
-                conexionBasedatos =new ConexionBasedatos(IP, "deisa_db1", "root", "s1i3s7t1e1mas?", 3306);
+                conexionBasedatos =new ConexionBasedatos(IP, "", "root", "", 3306);
             }
             if (conexionBasedatos.iniciarTransaccion())
             {
                 return true;
             }
             else {
-                conexionBasedatos = new ConexionBasedatos(servidorDNSMysql, "deisa_db1", "root", "s1i3s7t1e1mas?", 3306);
+                conexionBasedatos = new ConexionBasedatos(servidorDNSMysql, "", "root", "", 3306);
             }
             return conexionBasedatos.iniciarTransaccion();
         }

@@ -63,26 +63,6 @@ namespace SistemaDEISA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add {
-            get {
-                object obj = ResourceManager.GetObject("add", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap agregar {
-            get {
-                object obj = ResourceManager.GetObject("agregar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap agregarFlecha {
             get {
                 object obj = ResourceManager.GetObject("agregarFlecha", resourceCulture);
@@ -126,6 +106,16 @@ namespace SistemaDEISA.Properties {
         internal static System.Drawing.Bitmap clientes {
             get {
                 object obj = ResourceManager.GetObject("clientes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cotizaciones {
+            get {
+                object obj = ResourceManager.GetObject("cotizaciones", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +236,16 @@ namespace SistemaDEISA.Properties {
         internal static System.Drawing.Bitmap quitarFlecha {
             get {
                 object obj = ResourceManager.GetObject("quitarFlecha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap signoAgregar {
+            get {
+                object obj = ResourceManager.GetObject("signoAgregar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

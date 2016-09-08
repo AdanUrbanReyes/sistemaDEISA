@@ -341,6 +341,44 @@ namespace SistemaDEISA.utilerias
             return objetos;
         }
 
+        public static List<object[]> leerTuplas(MySqlDataReader tuplas) { 
+            if(tuplas == null){
+                return null;
+            }
+            List<object[]> cadenas = null;
+            int i;
+            try
+            {
+                if (tuplas.HasRows)
+                {
+                    cadenas = new List<object[]>();
+                    while (tuplas.Read())
+                    {
+                        object []valores=new object [tuplas.FieldCount];
+                        for (i = 0; i < tuplas.FieldCount; i++) {
+                            valores[i] = tuplas[i];
+                        }
+                        cadenas.Add(valores);
+                    }
+                }
+            }
+            catch (MySqlException mse)
+            {
+                Console.WriteLine("ERROR al leer tuplas para List<string[]>\n" + mse.ToString());
+            }
+            tuplas.Close();
+            return cadenas;
+        }
+
+        public static string generaSentenciaSelect(object objeto) {
+            if (objeto == null)
+            {
+                return null;
+            }
+            string filtro = Mysql.generaFiltro(objeto, "AND");
+            return (filtro == null) ? "SELECT * FROM " + objeto.GetType().Name.ToLower() + ";" : "SELECT * FROM " + objeto.GetType().Name.ToLower() + " WHERE " + filtro+";";
+        }
+
         public static string generaSentenciaUpdate(ConexionBasedatos conexionBasedatos, object objeto)
         {
             if (objeto == null || conexionBasedatos == null) {
