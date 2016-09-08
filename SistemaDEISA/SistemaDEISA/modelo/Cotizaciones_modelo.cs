@@ -24,6 +24,27 @@ namespace SistemaDEISA.modelo
             return (plantas == null) ? null : Array.ConvertAll<object, string>(plantas, delegate(object objeto) { return (string)objeto; });
         }
 
+        public Cliente obtenerCliente(string razonSocial, string planta) {
+            List<object> clientes = Mysql.leerTuplas(conexionBasedatos.ejecutaSentenciaS("SELECT * FROM cliente WHERE razon_social = '"+Mysql.escapaSQL(razonSocial)+"' AND planta = '"+Mysql.escapaSQL(planta)+"';"),new Cliente());
+            return (clientes == null) ? null : (Cliente)clientes[0];
+        }
+
+        public Direccion obtenerDireccion(int id)
+        {
+            List<object> direcciones = Mysql.leerTuplas(conexionBasedatos.ejecutaSentenciaS("SELECT * FROM direccion WHERE id = " + id + ";"), new Direccion());
+            return (direcciones == null) ? null : (Direccion)direcciones[0];
+        }
+
+        public Codigo_postal obtenerCodigoPostal(int id)
+        {
+            List<object> codigosPostales = Mysql.leerTuplas(conexionBasedatos.ejecutaSentenciaS("SELECT * FROM codigo_postal WHERE id = " + id + ";"), new Codigo_postal());
+            return (codigosPostales == null) ? null : (Codigo_postal)codigosPostales[0];
+        }
+
+        public DateTime obtenerFechaHoraActual() {
+            return Mysql.fechaHoraActual(conexionBasedatos);
+        }
+
         public bool terminarTransaccion()
         {
             return conexionBasedatos.terminarTransaccion();

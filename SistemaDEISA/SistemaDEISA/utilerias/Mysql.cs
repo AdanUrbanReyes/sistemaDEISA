@@ -425,5 +425,13 @@ namespace SistemaDEISA.utilerias
             }
             return "DELETE FROM " + nombreTabla + " where " + filtro + ";";
         }
+    
+        public static DateTime fechaHoraActual(ConexionBasedatos conexionBasedatos){
+            if(conexionBasedatos == null){
+                return Mysql.valorNoSeteadoDateTime;
+            }
+            object[] fechaHoraActualSistema = Listas.aArreglo(Mysql.leerTuplas(conexionBasedatos.ejecutaSentenciaS("SELECT NOW();")), 0);
+            return (fechaHoraActualSistema == null) ? Mysql.valorNoSeteadoDateTime : (DateTime) fechaHoraActualSistema[0];
+        }
     }
 }

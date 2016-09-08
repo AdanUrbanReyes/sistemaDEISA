@@ -12,11 +12,11 @@ namespace SistemaDEISA.modelo
     /// </summary>
     public class InicioSesion_modelo
     {
-        private static string pathIPPublicaServidorMysql = @"C:\sistemaDEISA\conexionRemota\ipPublicaServidorMysql.dat";
-        private static string pathIPPrivadaServidorMysql = @"C:\sistemaDEISA\conexionRemota\ipPrivadaServidorMysql.dat";
+        private static string pathIPPublicaServidorMysql = @"C:\sistemaDEISA\conexionBasedatos\ipPublicaServidorMysql.dat";
+        private static string pathIPPrivadaServidorMysql = @"C:\sistemaDEISA\conexionBasedatos\ipPrivadaServidorMysql.dat";
 
         //private static string pathCodigoPostal = @"C:\Users\Ayan\Downloads\CPdescargatxt\CPdescarga.txt";
-        
+        private static string servidorDNSMysql = "deisacv.dlinkddns.com";
         private ConexionBasedatos conexionBasedatos;
         
         /*
@@ -93,21 +93,20 @@ namespace SistemaDEISA.modelo
             string IP = null;
             if (tipoConexion == "Local")
             {
-                conexionBasedatos = new ConexionBasedatos("localhost", "deisa", "root", "A1y3a1n7?", 3306);
-                //IP = InicioSesion_modelo.obtenerIPServidorMysql(pathIPPrivadaServidorMysql);
-                //conexionBasedatos = Mysql.obtenerInstancia(IP, "", "root", "", 3306);
+                IP = InicioSesion_modelo.obtenerIPServidorMysql(pathIPPrivadaServidorMysql);
+                conexionBasedatos = new ConexionBasedatos(IP, "deisa", "root", "s1i3s7t1e1mas?", 3306);
             }
             else
             {
                 IP = obtenerIPServidorMysql(pathIPPublicaServidorMysql);
-                conexionBasedatos =new ConexionBasedatos(IP, "", "root", "", 3306);
+                conexionBasedatos = new ConexionBasedatos(IP, "deisa", "root", "s1i3s7t1e1mas?", 3306);
             }
             if (conexionBasedatos.iniciarTransaccion())
             {
                 return true;
             }
             else {
-                conexionBasedatos = new ConexionBasedatos(servidorDNSMysql, "", "root", "", 3306);
+                conexionBasedatos = new ConexionBasedatos(servidorDNSMysql, "deisa", "root", "s1i3s7t1e1mas?", 3306);
             }
             return conexionBasedatos.iniciarTransaccion();
         }
